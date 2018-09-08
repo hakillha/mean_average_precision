@@ -63,7 +63,7 @@ if __name__ == '__main__':
         with open(os.path.join(args.gt_dir, gtfname) + '.txt', 'r') as f:
             for line in f:
                 line = line.split()
-                gt_bb.append(list(map(float,line[1:])))
+                gt_bb.append(list(map(float,line[1:5])))
                 gt_cls.append(CLASS_ID[line[0]])
         gt_bb = np.array(gt_bb, dtype=np.float32)
         bb_normalize(gt_bb, file_id)
